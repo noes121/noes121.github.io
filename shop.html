@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styleshop.css">
+    <script src="JS/shop.js" async></script>
+    <link rel="shortcut icon" href="/Imagenes/IMG-HOME/IMG-INICIO/LogoORX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Compras | ORX</title>
+    <style>
+    #contenedorPagina2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+
+        #fondoOscuro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent; 
+            display: none; 
+        }
+        #pagina1.opacidadReducida {
+            opacity: 0.7;
+            transition: opacity 0.5s ease; 
+        }
+    </style>
+</head>
+<body id="pagina1">
+    <div id="particles-js"></div>
+    <script src="JS/particles.min.js"></script>
+    <script src="JS/particles.json"></script>
+
+    <div class="content">
+    <section class="cabecera">
+		<header class="appear-header">
+            <a href="index.html" aria-current="page" class="logo header__logo nuxt-link-exact-active nuxt-link-active"><img  src="/Imagenes/IMG-HOME/IMG-INICIO/LogoORX.png" alt="Logo" class="logo__img" ></a>
+        </header>  
+      
+    </section>
+     <div id="title"><h1>¡Gana Ventaja con Nuestros Programas! Elige y Disfruta</h1></div>
+
+
+    <section class="contenedor">
+
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">Left 4 dead 2</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/left4dead2.jpg" alt="" class="img-item" >
+                <span class="precio-item">$150</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Bloodhunt</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/bloodhunt.jpg" alt="" class="img-item">
+                <span class="precio-item">$20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Dota 2</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/dota2.jpg" alt="" class="img-item">
+                <span class="precio-item">$20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Valorant</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/valorant.jpg" alt="" class="img-item">
+                <span class="precio-item">$40</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Free Fire</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/freefire.jpg" alt="" class="img-item">
+                <span class="precio-item">$30</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Spotify</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/spotify.png" alt="" class="img-item">
+                <span class="precio-item">$56</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Discord</span>
+                <img src="/Imagenes/IMG-HOME/IMG-CHEATS/discord.webp" alt="" class="img-item">
+                <span class="precio-item">$60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+
+
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items">
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <button id="openBuyPage" class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+            <div id="buyContent" ></div>
+        </div>
+    </section>
+    <section style="border-bottom:none;" class="pie">
+
+		<footer>
+			<div class="redes-sociales">
+				<a id="red" href="#" class="red-social-icono"><i class="fab fa-facebook"></i></a>
+				<a id="red" href="#" class="red-social-icono"><i class="fab fa-twitter"></i></a>
+				<a id="red" href="#" class="red-social-icono"><i class="fab fa-instagram"></i></a>
+				
+			</div>
+			<p class="derechos-autor">COPYRIGHT © 2023 ORX TODOS DIRECHOS RESERVADOS AIM-CHEATS</p>
+		  </footer>
+		  
+		  
+	</section>
+    
+</div>
+
+<script>
+    
+    function loadBuyPage() {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'buy.html';
+        iframe.style.width = '100%';
+        iframe.style.height = '500px';
+        document.getElementById('buyContent').innerHTML = '';
+        document.getElementById('buyContent').appendChild(iframe);
+    }
+        document.getElementById('openBuyPage').addEventListener('click', loadBuyPage);
+
+
+
+</script>
+
+
+</body>
+</html>
