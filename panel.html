@@ -74,19 +74,19 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="menu-wrap">
                                 <nav class="menu-nav show">
                                     <div class="logo">
-                                        <h2 class="title wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORX</font></font></a></h2>
+                                    <h2 class="title wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORX</font></font></a></h2>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
                                         <li><a href="#"><i class="bi bi-house-door-fill"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inicio</font></font></a></li>
-                                        <li><a href=""><i class="bi bi-film"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tutorial</font></font></a></li>
-                                        <li><a href="/"><i class="bi bi-box-arrow-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a></li>                                        
+                                        <li><a href="#"><i class="bi bi-film"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tutorial</font></font></a></li>
+                                        <li><a  href="#"id="exit"><i class="bi bi-box-arrow-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a></li>                                        
                                         </ul>
                                     </div>
                                     <div class="header-action">
                                         <ul>
                                             <li class="header-sine">
-                                                <a href=""><i id="user" class="bi bi-person-circle" style="font-size: 20px;"></i></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mi cuenta</font></font></a>
+                                                <a href="#"><i id="user" class="bi bi-person-circle" style="font-size: 20px;"></i></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mi cuenta</font></font></a>
                                             </li>
                                         </ul>
                                     </div> 
@@ -98,15 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="mobile-menu">
                                 <nav class="menu-box">
                                     <div class="close-btn"><i class="bi bi-list"></i></div>
-                                    <div class="nav-logo"><a href=""><img src="/Imagenes/IMG-HOME/LogoORX (2).png" alt=""></a>
+                                    <div class="nav-logo"><a href="#"><img src="/Imagenes/IMG-HOME/LogoORX (2).png" alt=""></a>
                                     </div>
                                     <div class="menu-outer">
                                     </div>
                                     <div class="social-links">
                                         <ul class="clearfix">
-                                            <li><a href=""><span class="bi bi-discord"></span></a></li>
-                                            <li><a href=""><span class="bi bi-whatsapp"></span></a></li>
-                                            <li><a href=""><span class="bi bi-youtube"></span></a></li>
+                                            <li><a href="#"><span class="bi bi-discord"></span></a></li>
+                                            <li><a href="#"><span class="bi bi-whatsapp"></span></a></li>
+                                            <li><a href="#"><span class="bi bi-youtube"></span></a></li>
                                          
                                         </ul>
                                     </div>
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="header-icon">
-                    <a href="" class="menu-tigger"><img class="imagenOrx" src="/Imagenes/IMG-HOME/LogoORX (2).png" alt=""></a>
+                    <a href="#" class="menu-tigger"><img class="imagenOrx" src="/Imagenes/IMG-HOME/LogoORX (2).png" alt=""></a>
                 </div>
             </div>
            
@@ -138,14 +138,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         <div class="contact-list mb-30">
                                 <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desarrollador</font></font></h4>
-                                <a href="" class="menu-tigger"><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">Noe</font></font></p></a>
+                                <a href="#" class="menu-tigger"><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">Noe</font></font></p></a>
                         </div>
                 </div>
                         
                 <div class="social-icon-right mt-30">
-                            <a href=""><i class="bi bi-discord"></i></i>
-                            </a><a href=""><i class="bi bi-youtube"></i></a>
-                            <a href=""><i class="bi bi-whatsapp"></i></a>
+                            <a href="#"><i class="bi bi-discord"></i></i>
+                            </a><a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
                 </div>
 
         </div>
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			</li>
 
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-				<a href="/"><i class="bi bi-box-arrow-left" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a>
+				<a href="#" id="exitt"><i class="bi bi-box-arrow-left" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a>
 			</li>
 			</ul>
 </nav>
@@ -339,6 +339,30 @@ function mostrarContenido(opcion) {
 }
 
 
+
+</script>
+<script>
+  $("#exit,#exitt").click(function (event) {
+    event.preventDefault(); 
+
+    Swal.fire({
+    title: "<span style='color: red;'>Estas seguro?</span>",
+      text: "¡No podrás revertir esto!",
+      icon: "warning",
+      background: "#141a25",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si,estoy seguro"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        window.location.href = "index.html";
+      } else {
+   
+      }
+    });
+  });
 </script>
 </body>
 </html>
