@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="CSS/style.css">
  <script src="/Frameworks/bootstrap.bundle.min.js.descarga"></script>
  <script src="/Frameworks/bootstrap.min.css"></script>
+ <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
  <style>
 	#dev {
@@ -76,11 +81,11 @@ Comprar
 </nav>
 <div class="header__log-lang">
 <div dir="auto" class="v-select vs--single vs--unsearchable">
-<div id="vs64590__combobox" role="combobox" aria-expanded="false" aria-owns="vs64590__listbox" aria-label="Search for option" class="vs__dropdown-toggle"> <a class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div id="vs64590__combobox" role="combobox" aria-expanded="false" aria-owns="vs64590__listbox" aria-label="Search for option" class="vs__dropdown-toggle"> <a  class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	<i class="bi bi-globe-americas"></i>
 Lenguaje
 </a>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#">English</a> <a class="dropdown-item" href="#">Español</a> </div>
+<div  class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a onclick="ingless()" id="ingles" class="dropdown-item" href="#">English</a> <a class="dropdown-item" href="#">Español</a> </div>
 </div>
 </div>
 <div class="user-login header__login">
@@ -653,6 +658,16 @@ ORX
 		}
 	  );
 	});
+  </script>
+  <script>
+	function ingless(){
+		Swal.fire({
+			background: "#141a25",
+          icon: "error",
+		  title: "❌<span style='color: red;'>Idioma no disponible</span>❌"
+         
+});
+	}
   </script>
 
 <script>
