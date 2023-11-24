@@ -20,9 +20,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <link rel="stylesheet" id="google-fonts-1-css" href="/Frameworks/Framework_Panel/css" type="text/css" media="all">
 <script type="text/javascript" src="/Frameworks/jquery.min.js.descarga" id="jquery-core-js"></script>
 <link rel="stylesheet" href="/Frameworks/Framework_Panel/widget-woocommerce.min.css">
-
+<script>
+    function devtoolIsOpening() {
+        console.clear();
+        let before = new Date().getTime();
+        debugger;
+        let after = new Date().getTime();
+        if (after - before > 200) {
+            document.write(" Dont open Developer Tools. ");
+            window.location.replace("https://www.google.com");
+        }
+        setTimeout(devtoolIsOpening, 100);
+    }
+    devtoolIsOpening();
+    </script>
 </head>
     <body class="e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" style="position: relative; min-height: 100%; top: 40px;">
+        <script>
+            function devtoolIsOpening() {
+                console.clear();
+                let before = new Date().getTime();
+                debugger;
+                let after = new Date().getTime();
+                if (after - before > 200) {
+                    document.write(" Dont open Developer Tools. ");
+                    window.location.replace("https://www.google.com");
+                }
+                setTimeout(devtoolIsOpening, 100);
+            }
+            devtoolIsOpening();
+            </script>
+
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -37,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
        Swal.fire({
     icon: "success",
-    title: "<span style='color: White;'>Bienvenido</span>",
-    text: "☻" +username+ "☻",
+    title: `✔️<span style='color: white;'>Bienvenido ${username}</span>✔️`,
+    text: "⚡⚡⚡⚡⚡",
     background: "#141a25",
    showClass: {
     popup: `
@@ -63,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="skiptranslate"><iframe id=":1.container" class="VIpgJd-ZVi9od-ORHb-OEVmcd skiptranslate" frameborder="0" src="" style="visibility:visible"></iframe>
 
     </div>
-        <!-- header-area -->
+       
         <header>
             <div id="header-top-fixed" class=""></div>
             <div id="sticky-header" class="menu-area">
@@ -74,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="menu-wrap">
                                 <nav class="menu-nav show">
                                     <div class="logo">
-                                    <h2 class="title wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORX</font></font></a></h2>
+                                    <h2 class="title wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORX</font></font></a></h2>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
@@ -93,8 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </nav>
                             </div>
                             
-                            
-                            <!-- Mobile Menu  -->
+                        
                             <div class="mobile-menu">
                                 <nav class="menu-box">
                                     <div class="close-btn"><i class="bi bi-list"></i></div>
@@ -113,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </nav>
                             </div>
                             <div class="menu-backdrop"></div>
-                            <!-- End Mobile Menu -->
+                        
                         </div>
                     </div>
                 </div>
@@ -123,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
            
 
-        <!-- offCanvas-menu -->
+    
         <div class="extra-info">
                 <div class="close-icon menu-close">
                             <button><i class="bi bi-x-octagon-fill"></i></button>
@@ -138,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         <div class="contact-list mb-30">
                                 <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desarrollador</font></font></h4>
-                                <a href="#" class="menu-tigger"><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">Noe</font></font></p></a>
+                                <a href="#" class="menu-tigger"><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"><span style="color: red;">Noe</span></font></font></p></a>
                         </div>
                 </div>
                         
@@ -161,7 +188,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <button class="scroll-top scroll-to-target" data-target="html">
-          <i class="bi bi-arrow-up-circle-fill" style="font-size: 20px;"></i>
+            <a href="#"><i class="bi bi-arrow-up-circle-fill" style="font-size: 20px;"></i></a>
+          
         </button>
         <main class="main-content-elementor">
             		<div data-elementor-type="wp-page" data-elementor-id="99" class="elementor elementor-99">
@@ -202,10 +230,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="contenido">
     <div id="saludo">
         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-            Hola, </font></font><strong><span id="usernamePlaceholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font></p>
+            Hola, </font></font><strong><span id="usernamePlaceholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></strong><font style="vertical-align: inherit;">  le saluda atentamente el desarrollador<span style="color:rgb(255, 0, 0)">  Noe.</span> <font style="vertical-align: inherit;"> </font></font></p>
     </div>
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	Desde el panel de su cuenta, puede ver </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">las actualizaciones recientes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , podra </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">restablecer su HWID</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> ver los tutoriales del manejo del software </font></font></a><font style="vertical-align: inherit;">  y  <font style="vertical-align: inherit;"><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> podra descargar el software.</font></font></a></font></font></p>
+	Desde el panel de su cuenta, puede ver </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">las actualizaciones recientes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , podra </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">restablecer su HWID</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> ver los tutoriales del manejo del software </font></font></a><font style="vertical-align: inherit;">  y  <font style="vertical-align: inherit;"><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> podra descargar el software.</font></font></a></font></font></p>
      </div>
 </div>
 </div>
@@ -225,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="/Frameworks/Framework_Panel/dwf.js.descarga" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/minha-conta/" data-gt-orig-domain="xereca.store" data-gt-widget-id="53064270" defer=""></script><script type="text/javascript" src="" id="eael-reading-progress-js"></script>
 
 
-<!-- WooCommerce JavaScript -->
+
         <footer>
             <div class="footer-top-wrap">
                 <div class="container">
@@ -240,10 +268,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-lg-7 col-md-8">
                                 <div class="quick-link-list">
                                     <ul>
-                                        <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i  class="bi bi-discord" style="font-size: 20px;"></i></font></font></a></li>
-                                        <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-youtube" style="font-size: 20px;"></i></font></font></a></li>
-                                        <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-facebook" style="font-size: 20px;"></i></font></font></a></li>
-                                        <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-gitlab" style="font-size: 20px;"></i></font></font></a></li>
+                                        <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i  class="bi bi-discord" style="font-size: 20px;"></i></font></font></a></li>
+                                        <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-youtube" style="font-size: 20px;"></i></font></font></a></li>
+                                        <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-facebook" style="font-size: 20px;"></i></font></font></a></li>
+                                        <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="bi bi-gitlab" style="font-size: 20px;"></i></font></font></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -251,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="footer-social">
                                     <ul>
                                         <div class="copyright-text">
-                                            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © 2022 Todos los derechos reservados para </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORX</font></font></span></p>
+                                            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © 2023 Todos los derechos reservados para </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">|Developer : Noe</font></font></span></p>
                                         </div>
                                     </ul>
                                 </div>
@@ -289,12 +317,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.woocommerce-MyAccount-navigation-link').forEach(function (enlace) {
     enlace.addEventListener('click', function () {
-        // Restablecer todos los colores a su estado predeterminado
+     
         document.querySelectorAll('.woocommerce-MyAccount-navigation-link a').forEach(function (elemento) {
             elemento.style.background = '#54595f';
         });
 
-        // Cambiar el color solo del enlace clicado
         this.querySelector('a').style.background = 'linear-gradient(117deg, rgba(84,89,95, 1) 0%, rgba(88, 25, 31, 1) 22%, rgba(152, 16, 20, 1) 36%, rgba(255, 3, 3, 1) 83%)';
       
     });
@@ -308,7 +335,7 @@ function mostrarContenido(opcion) {
     var contenido = document.getElementById('contenido');
     var saludo = '<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hola, </font></font><strong><span id="usernamePlaceholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font></p>';
 
-    // Resetear los colores a su estado predeterminado
+  
     document.querySelectorAll('.woocommerce-MyAccount-navigation-link a').forEach(function (enlace) {
 
 

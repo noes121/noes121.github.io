@@ -25,6 +25,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </style>
 </head>
 <body>
+    <script>
+        function devtoolIsOpening() {
+            console.clear();
+            let before = new Date().getTime();
+            debugger;
+            let after = new Date().getTime();
+            if (after - before > 200) {
+                document.write(" Dont open Developer Tools. ");
+                window.location.replace("https://www.google.com");
+            }
+            setTimeout(devtoolIsOpening, 100);
+        }
+        devtoolIsOpening();
+        </script>
     <form action="">
     <div class="container">
         
@@ -161,8 +175,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         statusElement.style.display = 'block';
         statusElement.style.color = "green";
         localStorage.setItem('compraExitosa', 'true');
-
-        // Almacenar la URL actual en localStorage
         localStorage.setItem('paginaOrigen', window.location.href);
 
 

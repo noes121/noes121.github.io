@@ -43,24 +43,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 }
     </style>
       <style>
-/* Estilos para el formulario */
+        
+	#dev {
+	color: rgb(226, 106, 106);
+	font-size: 17px;
+	font-weight: bold;
+	opacity: 1;
+    cursor: pointer;
+  }
+  #dev:hover{
+	color: red;
+
+  }
+
+
 form {
     
     display: none;
    
     padding: 20px;
-    margin: 50px auto; /* Centra el formulario horizontalmente */
+    margin: 50px auto; 
     width: 35%;
 
     }
 
-/* Estilos adicionales según sea necesario */
+
 
       </style>
 </head>
 <body id="pagina1">
 
-
+    <script>
+        function devtoolIsOpening() {
+            console.clear();
+            let before = new Date().getTime();
+            debugger;
+            let after = new Date().getTime();
+            if (after - before > 200) {
+                document.write(" Dont open Developer Tools. ");
+                window.location.replace("https://www.google.com");
+            }
+            setTimeout(devtoolIsOpening, 100);
+        }
+        devtoolIsOpening();
+        </script>
 
 
     <div id="particles-js"></div>
@@ -79,7 +105,7 @@ form {
 
     <section class="contenedor">
 
-        <!-- Contenedor de elementos -->
+     
         <div class="contenedor-items">
             <div class="item">
                 <span class="titulo-item">Left 4 dead 2</span>
@@ -221,6 +247,7 @@ form {
                     </div>    
                 </div>
                 <a id="confirmar" href="#"   onclick="verificarCampos()">Confirmar pago</a>
+                <a id="cancelarr" href="#" onclick="cancelar()">Cancelar</a>
                 <div class="status">
                     <h3 id="titles">status</h3>
                 </div>
@@ -242,7 +269,7 @@ form {
 				<a id="red" href="#" class="red-social-icono"><i class="fab fa-instagram"></i></a>
 				
 			</div>
-			<p class="derechos-autor">COPYRIGHT © 2023 ORX TODOS DIRECHOS RESERVADOS.</p>
+			<p class="derechos-autor">COPYRIGHT © 2023 <a id="dev">| Developer:Noe</a></p>
 		  </footer>
 		  
 		  
@@ -257,7 +284,7 @@ form {
  function mostrarFormulario() {
     var formulario = document.querySelector('form');
       formulario.style.display = 'block';
-      // Dirigirse al formulario
+     
     formulario.scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -376,6 +403,22 @@ document.getElementById('confirmar').addEventListener('click', function (event) 
     }
 });
 
+
+function cancelar(){
+    var carritoItems = document.querySelectorAll('.carrito .carrito-items .carrito-item .carrito-item-titulo');
+    var titulos = Array.from(carritoItems).map(item => item.textContent.trim()).join(', ');
+
+  
+    var carritoItems = document.getElementsByClassName('carrito-items')[0];
+    while (carritoItems.hasChildNodes()){
+        carritoItems.removeChild(carritoItems.firstChild)
+    }
+    actualizarTotalCarrito();
+    ocultarCarrito();
+    ocultarFormulario();
+    
+
+}
 </script>
 
 

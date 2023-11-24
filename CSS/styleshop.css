@@ -12,6 +12,22 @@
     margin: 0
 }
 
+#cancelarr:hover {
+    background-color: rgb(0, 76, 151);
+}
+#cancelarr {
+    background-color: rgb(0, 174, 255);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
 body::-webkit-scrollbar{
     width: 6px;
     background: rgb(0, 0, 0);

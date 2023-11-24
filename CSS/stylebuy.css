@@ -86,8 +86,12 @@ h3{
     padding: 10px;
     font-size: 18px;
     transition: 0.5s;
-    margin-top: -1px;
-    border-radius: 20px;    
+    margin-top: 6px;
+    height: 79px;
+    border-radius: 20px;
+    
+    
+
 }
 .status{
     margin-bottom: 5px;
