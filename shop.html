@@ -40,7 +40,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         .cards .active {
     box-shadow: 0 0 20px rgb(48, 240, 0);
     transform: scale(1.05);
-}
+
+  
+}   .total{
+        font-size: 20px;
+        font-weight: bold;
+    }
     </style>
       <style>
         
@@ -195,6 +200,10 @@ form {
                             <input id="cvvv" type="password"maxlength="3" autocomplete="off" oninput="allowOnlyNumbers(this)" required>
                         </div>
                     </div>
+                    <div class="total">
+                        <h5>Total a pagar</h5>
+                            <span  style="color: red;" class="totalpagar"><b>2012</b></span>
+                    </div>
                 </div>
                 <div class="second-row">
                     <div class="card-number">
@@ -206,6 +215,7 @@ form {
                 </div>
                 <div class="third-row">
                     <h5>Fecha de expiracion</h5>
+                    
                     <div class="selection">
                         <div class="date">
                             <select name="months" id="months" required>
@@ -231,7 +241,7 @@ form {
                                 <option value="2015">2025</option>
                               </select>
                         </div>
-        
+                       
                    <div class="cards">
                 <div class="paypal" onclick="seleccionarTarjeta(this)">
                     <img src="/Imagenes/IMG-SHOP/IMG_BUY/vi.png" alt="PayPal">
@@ -246,7 +256,7 @@ form {
             </div>
                     </div>    
                 </div>
-                <a id="confirmar" href="#"   onclick="verificarCampos()">Confirmar pago</a>
+                <a id="confirmar" href="#"   onclick="verificarCampos() ; verificartarjeta();" >Confirmar pago</a>
                 <a id="cancelarr" href="#" onclick="cancelar()">Cancelar</a>
                 <div class="status">
                     <h3 id="titles">status</h3>
@@ -334,7 +344,7 @@ form {
     var titulos = Array.from(carritoItems).map(item => item.textContent.trim()).join(', ');
     Swal.fire({
         icon: "success",
-        title: "<span style='color: lime;'>Adquisición realizada con éxito.</span>",
+        title: "✔️<span style='color: lime;'>Adquisición realizada con éxito.</span>✔️",
         text: "-"+ titulos + "-",
         background: "#141a25",
        showClass: {
@@ -367,26 +377,49 @@ function verificarCampos() {
     var numeroTarjeta = document.getElementById('num').value.trim();
     var metodoSeleccionado = document.querySelector('.cards .active');
 
-    if (propietario === '' || cvv === '' || numeroTarjeta === '' || !metodoSeleccionado) {
+    if (propietario === '' || cvv === '' || numeroTarjeta === '') {
         Swal.fire({
-        icon: "error",
-        title: "<span style='color: red;'>Completa los campos vacios.</span>",
-        background: "#141a25",
-       showClass: {
-        popup: `
-          animate__animated
-          animate__fadeInUp
-          animate__faster
-        `
-      },
-      hideClass: {
-        popup: `
-          animate__animated
-          animate__fadeOutDown
-          animate__faster
-        `
-      }
-    });
+            icon: "error",
+            title: "❌<span style='color: red;'>Completa los campos vacíos.</span>❌",
+            background: "#141a25",
+            showClass: {
+                popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                `
+            },
+            hideClass: {
+                popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                `
+            }
+        });
+        return false;
+    }
+
+    if (!metodoSeleccionado) {
+        Swal.fire({
+            icon: "error",
+            title: "❌<span style='color: red;'>Selecciona un método de pago.</span>❌",
+            background: "#141a25",
+            showClass: {
+                popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                `
+            },
+            hideClass: {
+                popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                `
+            }
+        });
         return false;
     }
 
