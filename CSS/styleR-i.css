@@ -1,5 +1,7 @@
 /* MENSAJE DE ERRORES*/
 
+
+  
 *{
     box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ body::-webkit-scrollbar{
  }
  body::-webkit-scrollbar-thumb{
     background: #ffffff;
+    
     border-radius: 10px;
  }
 .toaster{
@@ -104,7 +107,7 @@ div {
     top: 0%;
     left: 0%;
     border-radius: 0px;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(1px);
     box-shadow: 0 0 40px rgb(255, 255, 255);
     height: 100%;
     display: flex;

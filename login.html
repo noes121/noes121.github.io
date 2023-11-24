@@ -8,6 +8,11 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="shortcut icon" href="Imagenes/IMG-HOME/IMG-INICIO/LogoORX.png" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="/Frameworks/font-awesomev2.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
@@ -77,9 +82,7 @@ Registrar
 </div>
 
 </div>
-<div class="toaster" id="toaster">
-  <span>Hola</span>
-</div>
+
 
 <script>
   $(document).ready(function() {
@@ -334,19 +337,74 @@ function redirectToAnotherForm() {
      
         if (authenticateUser(username, pass)) {
 
-            opentoaster('success', ' &#9989 Successfully &#9989', () => redirectToAnotherForm(username));
+               
+          Swal.fire({
+            icon: "success",
+           title: "<span style='color: lime;'>Success</span>",
+           background: "#141a25",
+           showConfirmButton: false,
+           showClass: {
+           popup: `
+           animate__animated
+           animate__bounceIn
+           animate__faster
+           `
+           },
+          hideClass: {
+          popup: `
+          animate__animated
+          animate__bounceIn
+          animate__faster
+       `
+     },
+     timer: 5500,
+});
+
+               
+        setTimeout(() => {
+        redirectToAnotherForm(username);
+    }, 2000);
+            
         } else {
-            opentoaster('error', ' &#10060 Usuario o contraseña incorrectos &#10060');
-            swal({
-                title:'encabeazdo',
-                text:'contenito',
-                icon:'success'
-            });
+
+          Swal.fire({
+            icon: "error",
+            title: "<span style='color: red;'>Oops...</span>",
+           text:  "Credenciales incorrectos...",
+           background: "#141a25",
+           footer: '<a style="color:red" href="https://discord.com/users/#noe1010">Comunicarse con el admin</a>',
+           showClass: {
+           popup: `
+           animate__animated
+           animate__fadeInUp
+           animate__faster
+           `
+        },
+        hideClass: {
+        popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+       `
+     }
+});
+          /*  
+          Swal.fire({
+           icon: "error",
+           title: "Oops...",
+          text: "Credenciales incorrectos...",
+           footer: '<a style="color:red" href="#">Comunicarse con el admin</a>'
+          
+             });*/
         }
     }
 
     function redirectToAnotherForm(username) {
-      window.location.href = `panel.html?username=${encodeURIComponent(username)}`;
+      sessionStorage.setItem('username', username);
+
+    
+     window.location.href = 'panel.html';
+      
     }
 </script>
 

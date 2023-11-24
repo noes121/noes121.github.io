@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 <link rel="shortcut icon" type="image/x-icon" href="/Imagenes/IMG-HOME/LogoORX.ico">
 <title>Panel | ORX</title>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="/CSS/stylePanel.css">
 <link rel="stylesheet" id="stylesh_css-css" href="/Frameworks/Framework_Panel/style(1).css" type="text/css" media="all">
 <link rel="stylesheet" id="bootstrap_css-css" href="/Frameworks/Framework_Panel/bootstrap.min.css" type="text/css" media="all">
@@ -17,7 +22,46 @@
 <link rel="stylesheet" href="/Frameworks/Framework_Panel/widget-woocommerce.min.css">
 
 </head>
-    <body class="e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" style="position: relative; min-height: 100%; top: 40px;"><div class="skiptranslate"><iframe id=":1.container" class="VIpgJd-ZVi9od-ORHb-OEVmcd skiptranslate" frameborder="0" src="" style="visibility:visible"></iframe>
+    <body class="e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" style="position: relative; min-height: 100%; top: 40px;">
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+       
+       const username = sessionStorage.getItem('username');
+
+     
+       const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+
+      
+       usernamePlaceholder.textContent = username;
+            
+       Swal.fire({
+    icon: "success",
+    title: "<span style='color: White;'>Bienvenido</span>",
+    text: "<span style = 'color:red;'>+username+</span>",
+    background: "#141a25",
+   showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
+   });
+
+  </script>
+        
+        
+        <div class="skiptranslate"><iframe id=":1.container" class="VIpgJd-ZVi9od-ORHb-OEVmcd skiptranslate" frameborder="0" src="" style="visibility:visible"></iframe>
+
     </div>
         <!-- header-area -->
         <header>
@@ -34,9 +78,9 @@
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
-                                        <li><a href=""><i class="bi bi-house-door-fill"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inicio</font></font></a></li>
+                                        <li><a href="#"><i class="bi bi-house-door-fill"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inicio</font></font></a></li>
                                         <li><a href=""><i class="bi bi-film"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tutorial</font></font></a></li>
-                                        <li><a href="/index.html"><i class="bi bi-box-arrow-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a></li>                                        
+                                        <li><a href="/"><i class="bi bi-box-arrow-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a></li>                                        
                                         </ul>
                                     </div>
                                     <div class="header-action">
@@ -57,8 +101,6 @@
                                     <div class="nav-logo"><a href=""><img src="/Imagenes/IMG-HOME/LogoORX (2).png" alt=""></a>
                                     </div>
                                     <div class="menu-outer">
-                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                          
                                     </div>
                                     <div class="social-links">
                                         <ul class="clearfix">
@@ -136,30 +178,35 @@
 	<ul>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
             
-				<a href=""><i class="bi bi-house-door-fill" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Panel</font></font></a>
+				<a href="#" onclick="mostrarContenido('dashboard')"><i class="bi bi-house-door-fill" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Panel</font></font></a>
 			</li>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-				<a href=""><i class="bi bi-arrow-counterclockwise" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Restablecer HWID</font></font></a>
+				<a href="#" onclick="mostrarContenido('restablecerHWID')"><i class="bi bi-arrow-counterclockwise" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Restablecer HWID</font></font></a>
 			</li>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-				<a href=""><i class="bi bi-download" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descargar</font></font></a>
+				<a href="#"  onclick="mostrarContenido('descargar')"><i class="bi bi-download" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descargar</font></font></a>
 			</li>
 
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-				<a href="/index.html"><i class="bi bi-box-arrow-left" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a>
+				<a href="/"><i class="bi bi-box-arrow-left" style="font-size: 20px;"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salir</font></font></a>
 			</li>
 			</ul>
 </nav>
 
 
 <div class="woocommerce-MyAccount-content">
-	<div class="woocommerce-MyAccount-content-wrapper"><div class="woocommerce-notices-wrapper"></div>
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-	Hola, </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">walan9792</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font></p>
+	<div class="woocommerce-MyAccount-content-wrapper">
+        <div class="woocommerce-notices-wrapper">
 
+    </div>
+    <div id="contenido">
+    <div id="saludo">
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            Hola, </font></font><strong><span id="usernamePlaceholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font></p>
+    </div>
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 	Desde el panel de su cuenta, puede ver </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">las actualizaciones recientes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , podra </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">restablecer su HWID</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> ver los tutoriales del manejo del software </font></font></a><font style="vertical-align: inherit;">  y  <font style="vertical-align: inherit;"><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida"> podra descargar el software.</font></font></a></font></font></p>
-
+     </div>
 </div>
 </div>
 </div>		
@@ -175,7 +222,7 @@
 </div>			
 <link rel="stylesheet" id="eael-reading-progress-css" href="/Frameworks/Framework_Panel/reading-progress.min.css" type="text/css" media="all">
 <script type="text/javascript" src="./Frameworks/Framework_Panel/main.js.descarga" id="main_js-js"></script>
-<script src="/Frameworks/Framework_Panel/dwf.js.descarga" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/minha-conta/" data-gt-orig-domain="xereca.store" data-gt-widget-id="53064270" defer=""></script><script type="text/javascript" src="./Mi cuenta – Tienda Xereca_files/reading-progress.min.js.descarga" id="eael-reading-progress-js"></script>
+<script src="/Frameworks/Framework_Panel/dwf.js.descarga" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/minha-conta/" data-gt-orig-domain="xereca.store" data-gt-widget-id="53064270" defer=""></script><script type="text/javascript" src="" id="eael-reading-progress-js"></script>
 
 
 <!-- WooCommerce JavaScript -->
@@ -223,5 +270,75 @@
 </div>
 
   </iframe>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+       
+        const username = sessionStorage.getItem('username');
+
+      
+        const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+
+       
+        usernamePlaceholder.textContent = username;
+
+       
+        sessionStorage.removeItem('username');
+    });
+
+    document.querySelectorAll('.woocommerce-MyAccount-navigation-link').forEach(function (enlace) {
+    enlace.addEventListener('click', function () {
+        // Restablecer todos los colores a su estado predeterminado
+        document.querySelectorAll('.woocommerce-MyAccount-navigation-link a').forEach(function (elemento) {
+            elemento.style.background = '#54595f';
+        });
+
+        // Cambiar el color solo del enlace clicado
+        this.querySelector('a').style.background = 'linear-gradient(117deg, rgba(84,89,95, 1) 0%, rgba(88, 25, 31, 1) 22%, rgba(152, 16, 20, 1) 36%, rgba(255, 3, 3, 1) 83%)';
+      
+    });
+});
+
+
+</script>
+<script>
+
+function mostrarContenido(opcion) {
+    var contenido = document.getElementById('contenido');
+    var saludo = '<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hola, </font></font><strong><span id="usernamePlaceholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font></p>';
+
+    // Resetear los colores a su estado predeterminado
+    document.querySelectorAll('.woocommerce-MyAccount-navigation-link a').forEach(function (enlace) {
+
+
+    });
+
+    switch (opcion) {
+        case 'dashboard':
+        contenido.innerHTML = saludo + '<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desde el panel de su cuenta, puede ver </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">las actualizaciones recientes</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , podrá </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">restablecer su HWID</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">ver los tutoriales del manejo del software </font></font></a><font style="vertical-align: inherit;"> y <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="bienvenida">podrá descargar el software.</font></font></a></font></font></p>';
+            
+            const username = 'username'; 
+            document.getElementById('usernamePlaceholder').textContent = username;
+           
+            document.querySelector('.woocommerce-MyAccount-navigation-link--dashboard a').style.background = 'linear-gradient(117deg, rgba(31, 32, 41, 1) 0%, rgba(88, 25, 31, 1) 22%, rgba(152, 16, 20, 1) 36%, rgba(255, 3, 3, 1) 83%)';
+            break;
+        case 'restablecerHWID':
+            contenido.innerHTML = '<p>Contenido para Restablecer HWID...</p>';
+           
+            document.querySelector('.woocommerce-MyAccount-navigation-link--orders a').style.background = 'linear-gradient(117deg, rgba(31, 32, 41, 1) 0%, rgba(88, 25, 31, 1) 22%, rgba(152, 16, 20, 1) 36%, rgba(255, 3, 3, 1) 83%)';
+            break;
+        case 'descargar':
+            contenido.innerHTML = '<p>Contenido para Descargar...</p>';
+           
+            document.querySelector('.woocommerce-MyAccount-navigation-link--edit-address a').style.background = 'linear-gradient(117deg, rgb(84, 89, 95) 0%, rgb(88, 25, 31) 22%, rgb(152, 16, 20) 36%, rgb(255, 3, 3) 83%);';
+            break;
+        default:
+            contenido.innerHTML = '<p>Contenido predeterminado...</p>';
+    }
+}
+
+
+</script>
 </body>
 </html>

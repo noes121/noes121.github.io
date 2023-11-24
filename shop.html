@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styleshop.css">
     <script src="JS/shop.js" async></script>
+    <link rel="stylesheet" href="CSS/stylebuy.css">
     <link rel="shortcut icon" href="/Imagenes/IMG-HOME/IMG-INICIO/LogoORX.png" type="image/x-icon">
-    
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Compras | ORX</title>
@@ -32,9 +37,32 @@
             opacity: 0.7;
             transition: opacity 0.5s ease; 
         }
+        .cards .active {
+    box-shadow: 0 0 20px rgb(48, 240, 0);
+    transform: scale(1.05);
+}
     </style>
+      <style>
+/* Estilos para el formulario */
+form {
+    
+    display: none;
+   
+    padding: 20px;
+    margin: 50px auto; /* Centra el formulario horizontalmente */
+    width: 35%;
+
+    }
+
+/* Estilos adicionales según sea necesario */
+
+      </style>
 </head>
 <body id="pagina1">
+
+
+
+
     <div id="particles-js"></div>
     <script src="JS/particles.min.js"></script>
     <script src="JS/particles.json"></script>
@@ -46,7 +74,7 @@
         </header>  
       
     </section>
-     <div id="title"><h1>¡Gana Ventaja con Nuestros Programas! Elige y Disfruta</h1></div>
+     <div id="title"><h1>Desata el Poder de tus Juegos con Nuestros Innovadores Programas</h1></div>
 
 
     <section class="contenedor">
@@ -56,7 +84,7 @@
             <div class="item">
                 <span class="titulo-item">Left 4 dead 2</span>
                 <img src="/Imagenes/IMG-HOME/IMG-CHEATS/left4dead2.jpg" alt="" class="img-item" >
-                <span class="precio-item">$150</span>
+                <span class="precio-item">$10</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
@@ -68,13 +96,13 @@
             <div class="item">
                 <span class="titulo-item">Dota 2</span>
                 <img src="/Imagenes/IMG-HOME/IMG-CHEATS/dota2.jpg" alt="" class="img-item">
-                <span class="precio-item">$20</span>
+                <span class="precio-item">$30</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Valorant</span>
                 <img src="/Imagenes/IMG-HOME/IMG-CHEATS/valorant.jpg" alt="" class="img-item">
-                <span class="precio-item">$40</span>
+                <span class="precio-item">$150</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
@@ -86,13 +114,13 @@
             <div class="item">
                 <span class="titulo-item">Spotify</span>
                 <img src="/Imagenes/IMG-HOME/IMG-CHEATS/spotify.png" alt="" class="img-item">
-                <span class="precio-item">$56</span>
+                <span class="precio-item">$20</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
-                <span class="titulo-item">Discord</span>
+                <span class="titulo-item">Discord Nitro</span>
                 <img src="/Imagenes/IMG-HOME/IMG-CHEATS/discord.webp" alt="" class="img-item">
-                <span class="precio-item">$60</span>
+                <span class="precio-item">$5</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
 
@@ -113,11 +141,98 @@
                         $120.000,00
                     </span>
                 </div>
-                <button id="openBuyPage" class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+                <button id="openBuyPage" class="btn-pagar"  onclick="mostrarFormulario()" >Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
             </div>
             <div id="buyContent" ></div>
+
+  
+        
         </div>
+        
+
     </section>
+          <!-- SECCION DE PAGO-->
+          <form action="">
+            <div class="container">
+                
+                <h3 id="titless">Confirmar tu pago</h3>
+                <div class="first-row">
+                    <div class="owner">
+                        <h5>Propietario</h5>
+                        <div class="input-field">
+                            <input id="user" type="text" autocomplete="off"oninput="allowOnlyLetters(this)" required>
+                        </div>
+                    </div>
+                    <div class="cvv">
+                        <h5>CVV</h5>
+                        <div class="input-field">
+                            <input id="cvvv" type="password"maxlength="3" autocomplete="off" oninput="allowOnlyNumbers(this)" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="card-number">
+                        <h5>Número de tarjeta</h5>
+                        <div class="input-field">
+                            <input id="num" type="text" maxlength="19" autocomplete="off" oninput="formatTarjeta(this)" required placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="third-row">
+                    <h5>Fecha de expiracion</h5>
+                    <div class="selection">
+                        <div class="date">
+                            <select name="months" id="months" required>
+                                <option value="Jan">Ene</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Abr</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Ago</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dic</option>
+                              </select>
+                              <select name="years" id="years">
+                                <option value="2020">2020</option>
+                                <option value="2019">2021</option>
+                                <option value="2018">2022</option>
+                                <option value="2017">2023</option>
+                                <option value="2016">2024</option>
+                                <option value="2015">2025</option>
+                              </select>
+                        </div>
+        
+                   <div class="cards">
+                <div class="paypal" onclick="seleccionarTarjeta(this)">
+                    <img src="/Imagenes/IMG-SHOP/IMG_BUY/vi.png" alt="PayPal">
+                </div>
+                <div class="master" onclick="seleccionarTarjeta(this)">
+                    <img src="/Imagenes/IMG-SHOP/IMG_BUY/mc.png" alt="MasterCard">
+                </div>
+                <div class="debito" onclick="seleccionarTarjeta(this)">
+                    <img src="/Imagenes/IMG-SHOP/IMG_BUY/pp.png" alt="Tarjeta de débito">
+                </div>
+                    
+            </div>
+                    </div>    
+                </div>
+                <a id="confirmar" href="#"   onclick="verificarCampos()">Confirmar pago</a>
+                <div class="status">
+                    <h3 id="titles">status</h3>
+                </div>
+                
+            </div>
+        
+        
+        </form>
+
+
+
+    
     <section style="border-bottom:none;" class="pie">
 
 		<footer>
@@ -127,27 +242,139 @@
 				<a id="red" href="#" class="red-social-icono"><i class="fab fa-instagram"></i></a>
 				
 			</div>
-			<p class="derechos-autor">COPYRIGHT © 2023 ORX TODOS DIRECHOS RESERVADOS AIM-CHEATS</p>
+			<p class="derechos-autor">COPYRIGHT © 2023 ORX TODOS DIRECHOS RESERVADOS.</p>
 		  </footer>
 		  
 		  
 	</section>
     
 </div>
+<script>
+
+
+</script>
+<script>
+ function mostrarFormulario() {
+    var formulario = document.querySelector('form');
+      formulario.style.display = 'block';
+      // Dirigirse al formulario
+    formulario.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function ocultarFormulario() {
+      var formulario = document.querySelector('form');
+      formulario.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      
+    });
+
+  </script>
+
 
 <script>
+    function seleccionarTarjeta(card) {
+      
+        var cards = document.querySelectorAll('.cards > div');
+        cards.forEach(c => c.classList.remove('active'));
     
-    function loadBuyPage() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'buy.html';
-        iframe.style.width = '100%';
-        iframe.style.height = '500px';
-        document.getElementById('buyContent').innerHTML = '';
-        document.getElementById('buyContent').appendChild(iframe);
+        card.classList.add('active');
     }
-        document.getElementById('openBuyPage').addEventListener('click', loadBuyPage);
+
+    function formatTarjeta(input) {
+       
+        let tarjetaNumber = input.value.replace(/\D/g, '');
+        tarjetaNumber = tarjetaNumber.replace(/(\d{4})(?=\d)/g, '$1 ');
+        input.value = tarjetaNumber;
+    }
+
+    function allowOnlyLetters(input) {
+        
+        input.value = input.value.replace(/[^A-Za-z]/g, '');
+    }
+ 
+    function allowOnlyNumbers(input) {
+        
+        input.value = input.value.replace(/\D/g, '');
+    }
 
 
+
+
+    function pagarClicked(){
+        var carritoItems = document.querySelectorAll('.carrito .carrito-items .carrito-item .carrito-item-titulo');
+    var titulos = Array.from(carritoItems).map(item => item.textContent.trim()).join(', ');
+    Swal.fire({
+        icon: "success",
+        title: "<span style='color: lime;'>Adquisición realizada con éxito.</span>",
+        text: "-"+ titulos + "-",
+        background: "#141a25",
+       showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      }
+    });
+  
+    var carritoItems = document.getElementsByClassName('carrito-items')[0];
+    while (carritoItems.hasChildNodes()){
+        carritoItems.removeChild(carritoItems.firstChild)
+    }
+    actualizarTotalCarrito();
+    ocultarCarrito();
+    ocultarFormulario();
+}
+function verificarCampos() {
+    var propietario = document.getElementById('user').value.trim();
+    var cvv = document.getElementById('cvvv').value.trim();
+    var numeroTarjeta = document.getElementById('num').value.trim();
+    var metodoSeleccionado = document.querySelector('.cards .active');
+
+    if (propietario === '' || cvv === '' || numeroTarjeta === '' || !metodoSeleccionado) {
+        Swal.fire({
+        icon: "error",
+        title: "<span style='color: red;'>Completa los campos vacios.</span>",
+        background: "#141a25",
+       showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      }
+    });
+        return false;
+    }
+
+    return true;
+}
+
+
+document.getElementById('confirmar').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (verificarCampos()) {
+       
+        pagarClicked();
+    }
+});
 
 </script>
 

@@ -6,15 +6,22 @@
     <link rel="stylesheet" href="CSS/stylebuy.css">
     <link rel="shortcut icon" href="/Imagenes/IMG-HOME/IMG-INICIO/LogoORX.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    /* Establecer un fondo transparente o quitarlo */
     body {
         background: transparent;
-        margin: 0; /* Eliminar márgenes predeterminados */
+        margin: 0; 
     }
 
-    /* Agregar estilos adicionales según sea necesario */
 </style>
 </head>
 <body>
@@ -103,19 +110,19 @@
         
             card.classList.add('active');
         }
-        //input tarjeta*/
+   
         function formatTarjeta(input) {
            
             let tarjetaNumber = input.value.replace(/\D/g, '');
             tarjetaNumber = tarjetaNumber.replace(/(\d{4})(?=\d)/g, '$1 ');
             input.value = tarjetaNumber;
         }
-/* input propietario*/
+
         function allowOnlyLetters(input) {
             
             input.value = input.value.replace(/[^A-Za-z]/g, '');
         }
-        //cv*/
+     
         function allowOnlyNumbers(input) {
             
             input.value = input.value.replace(/\D/g, '');
@@ -130,16 +137,16 @@
     var cvvvInput = document.getElementById('cvvv').value.trim();
     var userInput = document.getElementById('user').value.trim();
 
-    // Verificar si alguno de los campos está vacío
+
     if (numInput === '' || cvvvInput === '' || userInput === '') {
-        // Mostrar un mensaje indicando que todos los campos son obligatorios
+  
         var statusElement = document.getElementById('titles');
         statusElement.style.color = "red";
         statusElement.style.color = "red";
         statusElement.innerText = 'Completa todos los datos.';
         statusElement.style.display = 'block';
 
-        // Detener la ejecución de la función ya que los campos están vacíos
+      
         return;
     }
 
@@ -153,7 +160,14 @@
     if (tarjetaSeleccionada) {
         statusElement.style.display = 'block';
         statusElement.style.color = "green";
-        statusElement.innerText = '¡Successfully!';
+        localStorage.setItem('compraExitosa', 'true');
+
+        // Almacenar la URL actual en localStorage
+        localStorage.setItem('paginaOrigen', window.location.href);
+
+
+
+   
 
         setTimeout(function() {
             statusElement.innerText = '';
@@ -163,7 +177,7 @@
             document.getElementById('num').value = '';
             tarjetaSeleccionada.classList.remove('active');
 
-            // Restaurar la opacidad original y ocultar pagina1
+            
             pagina1.classList.add('opacidadReducida');
             
             window.close();
